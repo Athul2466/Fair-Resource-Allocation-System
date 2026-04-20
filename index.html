@@ -57,5 +57,28 @@
 
 <button onclick=addProcess()>Submit Process</button>
 </div>
+<div class="table-section">
+    <h2>Process Table</h2>
+    <button onclick="runAllocation()">Run Allocation</button>
+
+    <table border="1" width="100%" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Process Name</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Priority</th>
+                <th>Waiting Time</th>
+                <th>Fair Priority</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="processTable">
+        </tbody>
+    </table>
+</div>
+<script src="backend.js"></script>
 </body>
 </html>
