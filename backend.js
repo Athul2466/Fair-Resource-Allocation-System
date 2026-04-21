@@ -16,4 +16,14 @@ const addProcess=()=>{
         alert("Process Name should contain only letters and numbers.");
         return;
      }
+
+     if (!name || isNaN(arrival) || isNaN(burst) || isNaN(priority)) {
+
+        alert("Please fill all fields correctly")
+        return;
+    }else if(arrival < 0 ||burst < 0 ||priority < 0) {
+             alert("Negative values are not allowed.");
+        return;
+    }
+
 }
