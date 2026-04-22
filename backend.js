@@ -26,4 +26,27 @@ const addProcess=()=>{
         return;
     }
 
+    const process = {
+        id: processId++,
+        name: name,
+        arrival: arrival,
+        burst: burst,
+        priority: priority,
+        waiting: 0,
+        fairPriority: priority,
+        status: "Waiting"
+    };
+    alert("Process Added Successfully");
+    processes.push(process);
+
+    clearInputs();
+    displayProcesses();
+
+}
+
+function clearInputs() {
+    document.getElementById("pname").value = "";
+    document.getElementById("arrival").value = "";
+    document.getElementById("burst").value = "";
+    document.getElementById("priority").value = "";
 }
