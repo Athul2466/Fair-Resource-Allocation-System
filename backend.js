@@ -50,3 +50,27 @@ function clearInputs() {
     document.getElementById("burst").value = "";
     document.getElementById("priority").value = "";
 }
+
+function runAllocation() {
+    if (processes.length === 0) {
+        alert("Please add processes first");
+        return;
+    }
+
+    let currentTime = 0;
+
+    // Calculate waiting time and apply Aging Technique
+    processes.forEach(process => {
+        if (currentTime < process.arrival) {
+            currentTime = process.arrival;
+        }
+
+        process.waiting = currentTime - process.arrival;
+
+        // Aging Technique: increase priority for waiting processes
+        process.fairPriority = process.priority + Math.floor(process.waiting / 2);
+
+        currentTime += process.burst;
+    });
+
+}
