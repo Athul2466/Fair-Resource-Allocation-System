@@ -90,3 +90,26 @@ function runAllocation() {
     alert("Fair Resource Allocation Completed Successfully");
 
 }
+
+function displayProcesses() {
+    let table = document.getElementById("processTable");
+
+    if (!table) return;
+
+    table.innerHTML = "";
+
+    processes.forEach(process => {
+        table.innerHTML += `
+            <tr>
+                <td>${process.id}</td>
+                <td>${process.name}</td>
+                <td>${process.arrival}</td>
+                <td>${process.burst}</td>
+                <td>${process.priority}</td>
+                <td>${process.waiting}</td>
+                <td>${process.fairPriority}</td>
+                <td>${process.status}</td>
+            </tr>
+        `;
+    });
+}
