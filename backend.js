@@ -73,4 +73,20 @@ function runAllocation() {
         currentTime += process.burst;
     });
 
+    // Sort by Fair Priority (Higher value gets priority)
+    processes.sort((a, b) => {
+    if (b.fairPriority !== a.fairPriority) {
+        return b.fairPriority - a.fairPriority;
+    }
+    return a.arrival - b.arrival;
+});
+
+    // Mark as completed
+    processes.forEach(process => {
+        process.status = "Completed";
+    });
+
+    displayProcesses();
+    alert("Fair Resource Allocation Completed Successfully");
+
 }
